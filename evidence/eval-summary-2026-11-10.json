@@ -1,0 +1,64 @@
+{
+  "model": "scripted-demo-v1 (seeded behaviours: 0=correct, 1=noisy, 2=sloppy)",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "settings": {
+    "baseline": {
+      "pass@k": {
+        "pass@1": 0.333,
+        "pass@2": 0.667,
+        "pass@3": 1.0
+      },
+      "avg_tokens_per_fix_run": 742.8,
+      "avg_latency_ms_per_fix_run": 0.2,
+      "cost_usd_total": 0.0,
+      "review_precision": 0.667,
+      "review_recall": 0.667,
+      "review_false_positive_rate": 0.333,
+      "review_true_positives": 6,
+      "review_false_positives": 3,
+      "clean_fixture_false_positives": 1,
+      "fix_runs": 9,
+      "review_runs": 9
+    },
+    "low_budget": {
+      "pass@k": {
+        "pass@1": 0.333,
+        "pass@2": 0.667,
+        "pass@3": 1.0
+      },
+      "avg_tokens_per_fix_run": 402.9,
+      "avg_latency_ms_per_fix_run": 0.1,
+      "cost_usd_total": 0.0,
+      "review_precision": 0.8,
+      "review_recall": 0.444,
+      "review_false_positive_rate": 0.2,
+      "review_true_positives": 4,
+      "review_false_positives": 1,
+      "clean_fixture_false_positives": 1,
+      "fix_runs": 9,
+      "review_runs": 9
+    },
+    "no_checks": {
+      "pass@k": {
+        "pass@1": 0.333,
+        "pass@2": 0.667,
+        "pass@3": 1.0
+      },
+      "avg_tokens_per_fix_run": 742.8,
+      "avg_latency_ms_per_fix_run": 0.2,
+      "cost_usd_total": 0.0,
+      "review_precision": 0.5,
+      "review_recall": 0.667,
+      "review_false_positive_rate": 0.5,
+      "review_true_positives": 6,
+      "review_false_positives": 6,
+      "clean_fixture_false_positives": 2,
+      "fix_runs": 9,
+      "review_runs": 9
+    }
+  }
+}

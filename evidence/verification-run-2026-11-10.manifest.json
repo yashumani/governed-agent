@@ -1,0 +1,42 @@
+{
+  "checks": [
+    "budget",
+    "citation_required",
+    "evidence_matches_file",
+    "no_secrets_in_output",
+    "no_write_without_approval"
+  ],
+  "counts": {
+    "latency_ms": 0.3,
+    "model_calls": 7,
+    "steps": 6,
+    "tokens_in": 2097,
+    "tokens_out": 77
+  },
+  "finished_at": "2026-11-10T17:31:08+00:00",
+  "max_model_calls": 12,
+  "max_steps": 8,
+  "model": {
+    "backend": "scripted",
+    "model": "scripted-demo-v1",
+    "seed": 0
+  },
+  "outcome": "finished",
+  "run_id": "2dc271360ab8",
+  "seed": 0,
+  "started_at": "2026-11-10T17:31:08+00:00",
+  "task": "Review this repository for defects. Read the code, run its tests, and draft a finding for each defect you can demonstrate from the evidence, citing file and line and grading your confidence. If you cannot verify a suspicion, draft it as cannot_verify or say so.",
+  "task_hash": "d0029705af8e3190b405ed12dd8e0464357013bd7842e0e8044da4cee0d86474",
+  "tools": [
+    "draft_finding",
+    "list_dir",
+    "read_file",
+    "run_tests",
+    "search"
+  ],
+  "versions": {
+    "governed_agent": "0.1.0",
+    "platform": "Linux-7.0.0-44-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  }
+}

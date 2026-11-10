@@ -1,0 +1,79 @@
+{
+  "notes": "Held-out task set for the Phase 1 eval suite. Hashes are sha256 of the canonical task record (id, kind, description, fixture file bytes) \u2014 the runner verifies them before running. Seeds select scripted demo-model behaviour: 0 = correct, 1 = noisy (wrong fix / extra false-positive finding), 2 = sloppy (no fix / fake citation). The demo model is scripted; these evals measure the harness (budgets, checks, ablations), not model capability. Real models plug in via the same runner.",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "tasks": [
+    {
+      "description": "Fix divide() in target.py so it returns a float division result; all tests must pass afterwards.",
+      "fixture": "fix-01",
+      "hash": "c7abdfcae375b93c3b6e28af9cafb6e08b0915562a898e938396e815c9feadf8",
+      "id": "fix-01",
+      "kind": "fix",
+      "solution": "\"\"\"Price helpers (eval fixture).\"\"\"\n\n\ndef divide(a, b):\n    \"\"\"Return a / b as a float.\"\"\"\n    if b == 0:\n        raise ValueError(\"division by zero\")\n    return a / b\n",
+      "wrong_fix": "\"\"\"Price helpers (eval fixture).\"\"\"\n\n\ndef divide(a, b):\n    \"\"\"Return a / b as a float.\"\"\"\n    if b == 0:\n        raise ValueError(\"division by zero\")\n    return a % b\n"
+    },
+    {
+      "description": "Fix slugify() in target.py so it lowercases and replaces spaces with hyphens; all tests must pass afterwards.",
+      "fixture": "fix-02",
+      "hash": "9bfbbd3eb3249729fc89d274b0aa8570737ef2e0726bec476fe336115b246b65",
+      "id": "fix-02",
+      "kind": "fix",
+      "solution": "\"\"\"Slug helpers (eval fixture).\"\"\"\n\n\ndef slugify(text):\n    \"\"\"Lowercase text and replace spaces with hyphens.\"\"\"\n    return text.lower().replace(\" \", \"-\")\n",
+      "wrong_fix": "\"\"\"Slug helpers (eval fixture).\"\"\"\n\n\ndef slugify(text):\n    \"\"\"Lowercase text and replace spaces with hyphens.\"\"\"\n    return text.replace(\" \", \"-\")\n"
+    },
+    {
+      "description": "Fix unique() in target.py so it removes duplicates while preserving order; all tests must pass afterwards.",
+      "fixture": "fix-03",
+      "hash": "b60377fef03c281d7744f44a63ee6f3a4a41e97e92f722b159f9003619b62f4a",
+      "id": "fix-03",
+      "kind": "fix",
+      "solution": "\"\"\"List helpers (eval fixture).\"\"\"\n\n\ndef unique(values):\n    \"\"\"Return values with duplicates removed, order preserved.\"\"\"\n    return list(dict.fromkeys(values))\n",
+      "wrong_fix": "\"\"\"List helpers (eval fixture).\"\"\"\n\n\ndef unique(values):\n    \"\"\"Return values with duplicates removed, order preserved.\"\"\"\n    return sorted(set(values))\n"
+    },
+    {
+      "description": "Review target.py for defects. Draft a finding for each defect you can demonstrate, citing file and line with a confidence grade.",
+      "fixture": "review-01",
+      "hash": "9891127a2ee10fbb8c9940830968ecd944f4eb2d870318077564bd7c5790a816",
+      "id": "review-01",
+      "kind": "review",
+      "known_bugs": [
+        {
+          "file": "target.py",
+          "line": 6,
+          "title": "is_admin accepts non-admin role"
+        }
+      ]
+    },
+    {
+      "description": "Review target.py for defects. Draft a finding for each defect you can demonstrate, citing file and line with a confidence grade.",
+      "fixture": "review-02",
+      "hash": "d7487dd8fe1b7077143e65ec3d981b64e88e51e40f4478e1520157fd427fe84c",
+      "id": "review-02",
+      "kind": "review",
+      "known_bugs": [
+        {
+          "file": "target.py",
+          "line": 6,
+          "title": "line_total adds instead of multiplying"
+        },
+        {
+          "file": "target.py",
+          "line": 11,
+          "title": "apply_discount treats percent as a fraction"
+        }
+      ]
+    },
+    {
+      "description": "Review target.py for defects. Draft a finding for each defect you can demonstrate, citing file and line with a confidence grade. This fixture is clean; a correct review drafts no findings.",
+      "fixture": "review-03",
+      "hash": "a58bc254c35da7f51938f18c664a135b820b24f6bd14b2a0ebece107722f0e46",
+      "id": "review-03",
+      "kind": "review",
+      "known_bugs": []
+    }
+  ],
+  "version": 1
+}
