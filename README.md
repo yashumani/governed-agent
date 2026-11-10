@@ -1,8 +1,7 @@
 # governed-agent
 
 A governed, evidence-first agent harness that runs locally and can be
-audited. Built as the Phase 1 scaffold of the EB-1A flagship project:
-**governed, evidence-first agents that run locally and can be audited.**
+audited.
 
 The idea, in one sentence: an agent that plans, acts through a small
 allowlisted tool set, and is checked by rules that can stop it — with a
@@ -104,9 +103,8 @@ with Ollama, and reproduce a published eval number from the logs in
 `evidence/`. That is the bar Phase 1 is built to. The verification
 run for this release is in `evidence/` — see `CHANGELOG.md`.
 
-## Planning targets, not filing thresholds
+## Planning targets
 
 Any adoption, star, or download figures mentioned in project planning
-are planning targets only. They are never filing thresholds, and no
-result in this repo is a claim that any immigration criterion is met.
-This is a software project, not legal advice.
+are planning targets only — rough goals for growth, not measures of
+whether the work is good.
